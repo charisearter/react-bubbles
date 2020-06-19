@@ -57,7 +57,7 @@ const ColorList = ({ colors, updateColors }) => {
       .post('/api/colors', addColor)
       .then(res => {
         console.log(res.data)
-        setAddColor([
+        updateColors([
           ...colors,
           addColor
         ])
