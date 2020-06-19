@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { axiosWithAuth } from '../utils/axiosWithAuth'
-import { useParams, useHistory } from 'react-router-dom';
+
 
 const initialColor = {
   color: "",
@@ -12,7 +12,7 @@ const ColorList = ({ colors, updateColors }) => {
   const [editing, setEditing] = useState(false);
   const [colorToEdit, setColorToEdit] = useState(initialColor);
   const [addColor, setAddColor] = useState(initialColor);
-  const { id } = useParams();
+ 
 
 
   const editColor = color => {
@@ -51,8 +51,7 @@ const ColorList = ({ colors, updateColors }) => {
   };
 
   //add color
-
-  const addColor = e => {
+  const addNewColor = e => {
     e.preventDefault();
     axiosWithAuth()
       .post('/api/colors', addColor)
@@ -64,6 +63,14 @@ const ColorList = ({ colors, updateColors }) => {
         ])
       })
   };
+
+  const onAdd = e => {
+    e.preventDefault();
+    updateColors([
+      ...colors,
+      
+    ])
+  }
 
   return (
     <div className="colors-wrap">
@@ -115,26 +122,33 @@ const ColorList = ({ colors, updateColors }) => {
           <div className="button-row">
             <button type="submit">save</button>
             <button onClick={() => setEditing(false)}>cancel</button>
-            <button onClick={addColor}>Add a Color</button>
+          
           </div>
         </form>
       )}
       <div className="spacer" />
       {/* stretch - build another form here to add a color */}
-      <input
-        name='colrName'
-        placeholder='color name'
-        value={addColor.color}
-        onChange={}
-      />
-      <input
-        name='colorHex'
-        placeholder='# HexCode'
-        value={addColor.hex} //or addColor.code or addColor.color[hex]
-        onChange={}
-      />
+      <h2>Add Color</h2>
+   <form onSubmit={addNewColor}>
+   
+          <label>
+            color name:
+            <input
+              onChange={onAdd}
+            />
+          </label>
+          <label>
+            hex code:
+            <input
+              onChange={onAdd}
+            />
+          </label>
+          <button onClick={addNewColor}> Add a Color </button>
+   </form>
     </div>
-    
+   
+  
+      
   );
 };
 
