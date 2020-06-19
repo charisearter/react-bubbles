@@ -66,7 +66,7 @@ The MVP of this project will be broken up between 2 stages. Follow each step.
 - [x] Construct an AXIOS request to retrieve a token from the server. You'll use this token to interact with the API
 - [x] Save the token to localStorage
 - [x] Build a `axiosWithAuth` module to create an instance of axios with the authentication header
-- [ ] Build a `PrivateRoute` component and use it to protect a route that renders the `BubblesPage` component
+- [x] Build a `PrivateRoute` component and use it to protect a route that renders the `BubblesPage` component
 
 ### Stage 2 - Consuming the API
 
