@@ -54,12 +54,12 @@ const ColorList = ({ colors, updateColors }) => {
   const addNewColor = e => {
     e.preventDefault();
     axiosWithAuth()
-      .post('/api/colors', addColor)
+      .post('/api/colors', addColor) // api url, adds new color on bottom
       .then(res => {
         console.log(res.data)
-        updateColors([
-          ...colors,
-          addColor
+        updateColors([ //update color list
+          ...colors, //pass in a copy of colors
+          addColor //add the new color
         ])
       })
   };
