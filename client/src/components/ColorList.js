@@ -40,7 +40,7 @@ const ColorList = ({ colors, updateColors }) => {
       .delete(`/api/colors/${color}`)
       .then(res => {
         console.log(res)
-        setColorToEdit(res.data) //make sure this is correct state
+        updateColors(res.data) //make sure this is correct state
       })
       .catch(err => console.log(err.response.message))
   };
