@@ -21,7 +21,7 @@ body,
 }
 
 .spacer {
-  height: 5%;
+  height: 3%;
 }
 
 .bubble-wrap {
@@ -95,5 +95,48 @@ form {
     color: white;
     padding: 3px 8px;
     margin-top: 16px;
+  }
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: .3rem;
+
+  input {
+    margin: 1rem 0;
+  }
+
+  input[type='text'],
+  input[type='password']{
+    display: block;
+    width: 100%;
+    padding: 0.4rem;
+    font-size: 1.2rem;
+    border: 1px solid #044a42;
+    border-radius: 5px;
+  }
+
+  button {
+    background: #062925;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 0 auto;
+    color: #fff;
+  }
+
+  label {
+    font-size: 1rem;
+    font-weight: 900;
+    line-height: 1.6;
+    color: #062925;
+    justify-content: center;
+
   }
 }

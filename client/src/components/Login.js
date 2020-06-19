@@ -37,14 +37,16 @@ const Login = (props) => {
   };
   
     return (
-      <div>
+      <div className='login-form'>
         <form onSubmit={login}>
+          <label>Username:</label>
             <input
               type="text"
               name="username"
               value={username}
               onChange={onChange}
             />
+            <label> Password: </label>
             <input
               type="password"
               name="password"
