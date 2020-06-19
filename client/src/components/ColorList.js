@@ -64,14 +64,6 @@ const ColorList = ({ colors, updateColors }) => {
       })
   };
 
-  const onAdd = e => {
-    e.preventDefault();
-    updateColors([
-      ...colors,
-      
-    ])
-  }
-
   return (
     <div className="colors-wrap">
       <p>colors</p>
@@ -134,16 +126,25 @@ const ColorList = ({ colors, updateColors }) => {
           <label>
             color name:
             <input
-              onChange={onAdd}
+            value={addColor.color}
+            onChange={e =>
+              setAddColor({ ...addColor, color: e.target.value })
+            }
             />
           </label>
           <label>
             hex code:
             <input
-              onChange={onAdd}
+            value={addColor.code.hex}
+            onChange={e =>
+              setAddColor({
+                ...addColor,
+                code: { hex: e.target.value }
+              })
+            }
             />
           </label>
-          <button onClick={addNewColor}> Add a Color </button>
+          <button> Add a Color </button>
    </form>
     </div>
    
