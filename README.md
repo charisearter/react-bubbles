@@ -61,11 +61,11 @@ The MVP of this project will be broken up between 2 stages. Follow each step.
 
 ### Stage 1 - Authentication
 
-Build a login form to authenticate your users.
+[x]Build a login form to authenticate your users.
 
-- [ ] Construct an AXIOS request to retrieve a token from the server. You'll use this token to interact with the API
-- [ ] Save the token to localStorage
-- [ ] Build a `axiosWithAuth` module to create an instance of axios with the authentication header
+- [x] Construct an AXIOS request to retrieve a token from the server. You'll use this token to interact with the API
+- [x] Save the token to localStorage
+- [x] Build a `axiosWithAuth` module to create an instance of axios with the authentication header
 - [ ] Build a `PrivateRoute` component and use it to protect a route that renders the `BubblesPage` component
 
 ### Stage 2 - Consuming the API
@@ -76,7 +76,7 @@ Build a login form to authenticate your users.
 
 ### API Documentation
 
-  * **[POST]** * to `/api/login`: returns a token to be added to the header of all other requests. Pass in the following credentials as the `body` of the request: `{ username: 'Lambda School', password: 'i<3Lambd4' }`
+ [x] * **[POST]** * to `/api/login`: returns a token to be added to the header of all other requests. Pass in the following credentials as the `body` of the request: `{ username: 'Lambda School', password: 'asdf' }`
   * **[GET]** to `/api/colors`: returns the list of colors and their hex codes.
   * **[POST]** to `/api/colors`: creates a new color object. Pass the color as the `body` of the request (the second argument passed to `axios.post`).
   * **[PUT]** to `/api/colors/:id`: updates the color using the `id` passed as part of the URL. Send the color object with the updated information as the `body` of the request (the second argument passed to `axios.put`).
